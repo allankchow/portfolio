@@ -1,0 +1,117 @@
+@use "../base/variables" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/functions" as *;
+
+.about-container {
+    padding: 1.25rem;
+    max-width: 40rem;
+    margin: 0 auto;
+
+    .main-content {
+        h1 {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .content-flex {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 2rem;
+
+            img {
+                flex: 1;
+                max-width: 20rem;
+                height: auto;
+                border-radius: 5px;
+            }
+
+            div {
+                flex: 0 0 80%;
+                text-align: left;
+
+                h3 {
+                    margin-bottom: 1rem;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .social-links {
+            margin: 1rem 0 1rem; 
+            font-size: 2rem; 
+            display: flex;
+            justify-content: center; 
+            gap: 20px; 
+            
+
+            a {
+                color: inherit; 
+                transition: color 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    color: lighten($secondary-colour, 25%);
+                }
+            }
+        }
+    }
+
+    .tech-banner {
+        width: 100vw; 
+        overflow: hidden;
+        white-space: nowrap; 
+        position: absolute;
+        left:0;
+        right:0;
+        padding: 0.5rem;
+        border-top: 1px solid $secondary-colour;
+        border-bottom: 1px solid $secondary-colour;
+
+
+        .categories {
+            display: flex;
+            min-width: 200%; 
+            animation: scroll 30s linear infinite; 
+
+            .category {
+                display: inline-flex;
+                align-items: center;
+                padding-right: 5rem; 
+            
+                .category-title {
+                    font-weight: bold;
+                    margin-right: 1rem; 
+                }
+            
+                .skill-item {
+                    margin-right: 1rem; 
+                }
+            
+                .skill-item:last-child {
+                    margin-right: 0; 
+                }
+            }
+        }
+    }
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%); 
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .about-container .main-content .content-flex {
+        flex-direction: column; 
+        align-items: center;
+
+        img {
+            width: 100%; 
+        }
+    }
+}

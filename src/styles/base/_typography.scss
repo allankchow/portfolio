@@ -1,0 +1,11 @@
+@use '../base/variables' as *;
+
+body {
+    color: $secondary-colour;
+    font-family: $font;
+    line-height: $line-height;
+}
+
+button {
+    font-family: $font;
+}
