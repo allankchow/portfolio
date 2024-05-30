@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: space-between;
 
+    //import animations
+    @include scaleInBounce;
+    @include fadeInDown;
+
     .logo {
         z-index: 100;
         max-width: 8rem;
@@ -18,40 +22,26 @@
         // hover effect for logo
         &:hover {
             transform: scale(1.1);
-            filter: grayscale(0); 
+            filter: grayscale(0);
             opacity: 0.8;
         }
 
         // container for animated logo
         .animation-container {
-            width: 128px; 
-            height: 128px; 
+            width: 128px;
+            height: 128px;
             overflow: hidden;
             display: flex;
-            justify-content: center; 
-            align-content: center; 
+            justify-content: center;
+            align-content: center;
         }
 
-        // animation for static logo load in
-        @keyframes scaleIn {
-            0% {
-                transform: scale(0);
-            }
-            50% {
-                transform: scale(1.2); 
-            }
-            70% {
-                transform: scale(0.9); 
-            }
-            100% {
-                transform: scale(1); 
-            }
-        }
-        
+
+
         .static-logo {
-            animation: scaleIn 0.5s ease-out forwards; 
+            animation: scaleInBounce 0.5s ease-out forwards;
         }
-        
+
         // static logo
         img {
             width: 100%;
@@ -69,7 +59,18 @@
             justify-content: center;
 
             li {
-                margin-left:2rem;
+                margin-left: 2rem;
+                opacity: 0; // Start with nav items hidden
+                transform: translateY(-20px);
+                animation: fadeInDown 1s ease forwards;
+
+                &:nth-child(1) {
+                    animation-delay: 0.5s;
+                }
+
+                &:nth-child(2) {
+                    animation-delay: 0.8s;
+                }
 
                 a {
                     color: $secondary-colour;
@@ -83,7 +84,7 @@
                         position: absolute;
                         left: 0;
                         top: 50%;
-                        width: 0; 
+                        width: 0;
                         height: 2px;
                         background-color: black;
                         transform: translateY(-50%);
@@ -93,17 +94,21 @@
                     &:hover::after,
                     &:focus::after,
                     &.active::after {
-                        width: 100%; 
+                        width: 100%;
                         left: 0;
                     }
                 }
             }
         }
     }
+}
 
-    // Media Query for viewports of 550px or less
-    @media (max-width: 550px) {
-        flex-direction: column;  
+
+
+// Media Query for viewports of 550px or less
+@media (max-width: 550px) {
+    .header {
+        flex-direction: column;
         padding: 1rem 0 0 0;
 
 
@@ -115,7 +120,7 @@
         nav {
             ul {
                 flex-direction: column;
-                align-items: center;  
+                align-items: center;
                 margin-bottom: 2rem;
 
                 li {

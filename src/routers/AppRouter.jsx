@@ -9,7 +9,7 @@ import WorkPage from "../pages/WorkPage";
 
 const AppRouter = () => {
     return (
-        <BrowserRouter basename="/portfolio-01/">
+        <BrowserRouter basename="">
             <div>
                 <Header />
                 <Routes>
