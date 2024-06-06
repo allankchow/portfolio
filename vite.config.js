@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio-01/', // Set this to the root or your specific subdirectory
+  base: '/', // Set this to the root or your specific subdirectory
 })

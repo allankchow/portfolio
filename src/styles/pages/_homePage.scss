@@ -1,28 +1,46 @@
+@use "../base/variables" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/functions" as *;
+
+
 .home-container {
-    height: 70vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    //import animations
+    @include fadeInDown;
+    @include fadeInUp;
+    @include fadeInRight;
 
     .center-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         h1, p {
             color: #333;
             z-index: 2;
         }
 
+        h1 {
+            animation: fadeInDown 1.5s ease forwards;
+        }
+
         p {
-            padding: 0.5rem 1rem 0;
+            padding: 2rem 1rem 0;
             text-align: center;
+            animation: fadeInRight 3s ease forwards;
+            font-size: 1.2rem;
         }
 
         .animation {
             z-index: 1;
             position:absolute;
             max-width: 57.5rem;
+            animation: fadeInUp 3.5s ease forwards;
         }
     }
 
