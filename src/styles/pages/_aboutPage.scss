@@ -4,7 +4,6 @@
 
 .about-container {
     padding: 1.25rem;
-    max-width: 60rem;
     margin: 0 auto;
 
     @include fadeInRight;
@@ -60,6 +59,7 @@
 
             // intro and img
             .intro {
+                max-width: 60rem;
                 display: flex;
                 gap: 2rem;
 
@@ -80,7 +80,6 @@
 
             // tech stack section
             .tech-stack {
-                // max-width: 70rem;
                 opacity: 0;
                 animation: fadeInUp 2s ease forwards;
                 animation-delay: 2.6s;
@@ -93,17 +92,9 @@
 
                 .wp-block-group__inner-container .wp-block-group .wp-block-group__inner-container {
                     display: flex;
-                    // flex-wrap: wrap;      
+                    flex-wrap: wrap;      
                     justify-content: center;
-                    // overflow-x: auto;
-
-
-
-
-
-
-
-
+                    max-width: em(1200);
 
                     
                     // individual tech stack element

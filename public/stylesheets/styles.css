@@ -465,7 +465,6 @@ footer p {
 
 .about-container {
   padding: 1.25rem;
-  max-width: 60rem;
   margin: 0 auto;
 }
 @keyframes fadeInRight {
@@ -545,6 +544,7 @@ footer p {
   gap: 2rem;
 }
 .about-container .main-content .content-flex .intro {
+  max-width: 60rem;
   display: flex;
   gap: 2rem;
 }
@@ -571,7 +571,9 @@ footer p {
 }
 .about-container .main-content .content-flex .tech-stack .wp-block-group__inner-container .wp-block-group .wp-block-group__inner-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  max-width: 75em;
 }
 .about-container .main-content .content-flex .tech-stack .wp-block-group__inner-container .wp-block-group .wp-block-group__inner-container .wp-block-media-text {
   display: flex;
