@@ -3,7 +3,7 @@ import animationData from "../assets/animations/blob.json";
 
 const HomePage = () => {
     return (
-        <div className="home-container">
+        <main className="home-container">
             <div className="center-content">
                 <h1>ALLAN</h1>
                 <h1>CHOW</h1>
@@ -17,7 +17,7 @@ const HomePage = () => {
                     />
                 </div>
             </div>
-        </div>
+        </main>
     );
 };
 

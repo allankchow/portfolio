@@ -39,7 +39,7 @@ const WorkPage = () => {
     };
 
     return (
-        <div className="work-page-content">
+        <main className="work-page-content">
             <div className="content-left">
                 <Link to="/works" className="return-link">Return</Link>
                 <img src={work.acf.work_image} alt={`Cover for ${work.title.rendered}`} className="work-image" />
@@ -71,7 +71,7 @@ const WorkPage = () => {
                 </ul>
             </div>
 
-        </div>
+        </main>
     );
 };
 

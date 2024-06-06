@@ -14,7 +14,7 @@ const WorksPage = () => {
     }, []);
 
     return (
-        <div className="works-container">
+        <main className="works-container">
             <h1>WORKS | 作品集</h1>
             <ul>
                 {works.map(work => (
@@ -29,7 +29,7 @@ const WorksPage = () => {
                     </li>
                 ))}
             </ul>
-        </div>
+        </main>
     );
 };
 

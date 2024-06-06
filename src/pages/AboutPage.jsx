@@ -83,7 +83,7 @@ function AboutPage() {
     
 
     return (
-        <div className="about-container">
+        <main className="about-container">
             <div className="main-content">
                 <h1>ABOUT | 关于</h1>
                 <div className="content-flex">
@@ -134,7 +134,7 @@ function AboutPage() {
                     ))}
                 </div>
             </div>
-        </div>
+        </main>
     );
 }
 
