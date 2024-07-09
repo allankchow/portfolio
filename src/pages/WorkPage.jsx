@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";  
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 const WorkPage = () => {
     const { slug } = useParams();
@@ -45,20 +45,26 @@ const WorkPage = () => {
                 <img src={work.acf.work_image} alt={`Cover for ${work.title.rendered}`} className="work-image" />
                 <h1 className="work-title">{work.title.rendered}</h1>
                 <h2 className="work-subtitle">{work.acf.work_subtitle}</h2>
+                <div className="work-link">
+                    <a href={`https://www.allanchow.dev/${slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer">Live Site
+                        <span className='link-icon'>
+                            <FontAwesomeIcon icon={faExternalLinkAlt} />
+                        </span>
+                    </a>
+                </div>
             </div>
             <div className='content-right'>
                 <div className="flex-content">
                     <h3 className="section-heading">{work.acf.work_overview_heading}</h3>
-                    <div className="social-links">
-                        <a  href={`https://github.com/allankchow/${slug}`}
-                            target="_blank"
-                            rel="noopener noreferrer">See on GitHub
-                            <span>
-                                <FontAwesomeIcon icon={faExternalLinkAlt} />
-                            </span>
-                        </a>
-    
-                    </div>
+                    <a href={`https://github.com/allankchow/${slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer">See on GitHub 
+                        <span className='link-icon'>
+                            <FontAwesomeIcon icon={faExternalLinkAlt} />
+                        </span>
+                    </a>
                 </div>
                 {renderContentSections(work.acf.work_overview)}
                 <h3 className="section-heading">{work.acf.tech_heading}</h3>
